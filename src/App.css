@@ -1,38 +1,230 @@
 .App {
   text-align: center;
+  color: blue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo{
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input{
+  height: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.we-inside{
   color: white;
+  background-color: blue;
 }
 
-.App-link {
-  color: #61dafb;
+.keys{
+  color: white;
+  background-color: green;
+  font-size: larger;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.for-Links{
+  border: 2px solid blue;
+  box-shadow: 5px 5px 5px gainsboro
 }
+
+.for-stocker{
+  justify-content: space-around;
+  margin-left: auto;
+  display: flex;
+  width: 20%;
+  padding: 2em; 
+}
+
+#adder{
+  margin-left: auto;
+  display: flex;
+  width: 20%;
+  padding: 2em; 
+}
+
+.on-line{
+  display:flex;
+}
+
+.stocker{
+  color: green;
+  text-decoration: none;
+   
+}
+
+
+#home-head{
+  color: blue;
+  margin-left: 500px;
+}
+
+.drug-specs{
+  
+  margin-bottom: 20px;
+  padding: 90px;
+  border: 3px solid gainsboro;
+  box-shadow: 5px 5px 5px gainsboro;
+}
+
+form{
+  display: grid;
+  
+}
+
+input{
+  border: 1px solid blue;
+  margin-bottom: 15px;
+  width: 50%;
+  margin-left: 300px;
+  
+}
+
+#tosubmit{
+  width: 50%;
+  margin-left: 190px;
+  color: white;
+  background-color: green;
+  font-size: larger;
+  
+}
+
+
+.form-div{
+  margin-top:50px;
+  border: 2px solid blue;
+  width: 50%;
+  margin-left: 350px;
+  background-color:blue;
+}
+
+
+.form-input{
+  margin-left:190px;
+  margin-top: 20px;
+  font-size: larger;
+}
+
+
+
+  @media (max-width:416px) {
+
+    .for-stocker{
+      justify-content: space-around;
+      margin: auto;
+      display: flex;
+      width: 20%;
+      padding: 2em; 
+    }
+
+.stocker{
+  margin-left: 30px;
+}
+
+.form-div{
+  margin: auto;
+  width: 80%;
+  position: relative;
+  top: 30px;
+}
+
+.form-input{
+  margin: auto;
+  position: relative;
+  top: 3px;
+  width: 80%;
+}
+
+.keys{
+  margin-top: 5px;
+  font-size: medium;
+}
+
+
+#inner-form{
+  height: 300px;
+  margin-bottom: 50px;
+  
+}
+
+#tosubmit{
+  margin: auto;
+  position: relative;
+  top: 5px;
+}
+
+
+
+input{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#home-head{
+  margin: auto;
+}
+
+.on-line{
+  display: grid;
+}
+
+#adder{
+  margin: auto;
+}
+
+  }
+
+
+  @media (max-width:768px) {
+
+    #home-head{
+      margin: auto;
+    }
+
+
+    .on-line{
+      display: grid;
+    }
+    #adder{
+      margin: auto;
+    }
+
+    .stocker{
+      margin-left: 20px;
+    }
+
+
+    .form-div{
+      margin: auto;
+      width: 80%;
+      position: relative;
+      top: 30px;
+      height: 180px;
+    }
+    
+    .form-input{
+      margin: auto;
+      position: relative;
+      top: 15px;
+      width: 80%;
+    }
+    
+    .keys{
+      margin-top: 35px;
+      font-size: medium;
+    }
+    #inner-form{
+      height: 300px;
+      margin-bottom: 50px;
+      
+    }
+    
+    #tosubmit{
+      margin: auto;
+      position: relative;
+      top: 5px;
+    }
+    
+
+  }
