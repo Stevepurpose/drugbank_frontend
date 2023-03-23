@@ -104,6 +104,12 @@ input{
   font-size: larger;
 }
 
+.warning{
+  color:white;
+  font-size: large;
+  background-color: red;
+}
+
 
 
   @media (max-width:416px) {

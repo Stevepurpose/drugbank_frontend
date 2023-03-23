@@ -30,7 +30,7 @@ const[password,setPassword]=useState('')
  if(!res.ok){
     setUser(null)
      setLoading(false)
-     setError(error)
+     setError('invalid credentials')
      
      return
  }
@@ -59,9 +59,9 @@ return(
 <div>
 <button className="keys" disabled={isLoading}>Login</button>
 </div>
-{error&&<p>{error}</p>}
+
     </form>
-  
+    {error&&<p className="warning">{error}</p>}
 </div>
 )
 
