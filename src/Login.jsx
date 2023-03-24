@@ -19,10 +19,12 @@ const[password,setPassword]=useState('')
      body:JSON.stringify({email,password})
     })
  const data=await res.json()
- 
+ console.log(data)
  if(res.ok){
-    setUser(data)
+   // setUser(data)
     localStorage.setItem('user',JSON.stringify(data)) 
+   setUser(data)
+   
     setLoading(false)
    
   }
