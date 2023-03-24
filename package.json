@@ -1,4 +1,5 @@
 {
+  "allowedHosts":"all",
   "proxy":"http://localhost:4000",
   "name": "expiretrack",
   "version": "0.1.0",
