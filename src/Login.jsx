@@ -18,23 +18,24 @@ const[password,setPassword]=useState('')
      headers:{'Content-Type':'application/json'},
      body:JSON.stringify({email,password})
     })
- const data=await res.json()
- //if(res.ok){
-    setUser(data)
-    localStorage.setItem('user',JSON.stringify(data)) 
-    setLoading(false)
-    //return
-   
- // }
- 
+ const json=await res.json()
+
+
  if(!res.ok){
     setUser(null)
      setLoading(false)
-     setError('invalid credentials')
+     setError(error)
      
      return
  }
-
+ 
+ else{
+    setUser(json)
+    localStorage.setItem('user',JSON.stringify(json)) 
+    setLoading(false)
+ }
+   
+ 
 setEmail('')
 setPassword('')
 
