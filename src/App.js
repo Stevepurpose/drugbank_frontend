@@ -11,7 +11,7 @@ import Navbar from './Navbar'
 
 function App() {
   const[user,setUser]=useState('')
-  const[isLoading,setLoading]=useState(null)
+ // const[isLoading,setLoading]=useState(null)
   const[error,setError]=useState(null)
   
 useEffect(()=>{
@@ -33,9 +33,9 @@ useEffect(()=>{
 
 <Route path="/DrugForm"  element={user?<DrugForm setError={setError} user={user} error={error} />:<Navigate to='/login'/>}/>
 
-<Route path="/Login"  element={!user?<Login  user={user} setUser={setUser}  isLoading={isLoading}  setLoading={setLoading} error={error}   setError={setError}/>:<Navigate to='/'/>}/>
+<Route path="/Login"  element={!user?<Login  user={user} setUser={setUser}   error={error}   setError={setError}/>:<Navigate to='/'/>}/>
     
-<Route path="/Signup"  element={!user?<Signup user={user} setUser={setUser}  isLoading={isLoading}  setLoading={setLoading} error={error}   setError={setError}/>:<Navigate to='/'/>}/>      
+<Route path="/Signup"  element={!user?<Signup user={user} setUser={setUser}   error={error}   setError={setError}/>:<Navigate to='/'/>}/>      
 
 </Routes>
 </Router>
