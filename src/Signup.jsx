@@ -8,7 +8,6 @@ const[password,setPassword]=useState('')
   async function handleSubmit(e){
     e.preventDefault()
     try{
-   setError(null) //might be moved close to  setEmail('') or deleted
    const res=await fetch('/api/user/signup',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
@@ -22,6 +21,11 @@ const json=await res.json()
 
  setUser(json)
   localStorage.setItem('user',JSON.stringify(json))
+
+  setEmail('')
+  setPassword('')
+  setError(null) 
+
     }
 
 catch(error){
@@ -29,9 +33,7 @@ catch(error){
     setError(error.message)
     
 }
- //might move this section into the try block and include setError(null) with them
-   setEmail('')
-setPassword('')
+ 
 
 }
 
