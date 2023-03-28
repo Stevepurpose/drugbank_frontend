@@ -11,7 +11,7 @@ const[password,setPassword]=useState('')
    const res=await fetch('/api/user/signup',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({email,password})
+    body:JSON.stringify({email:email,password:password})
    })
 if(!res.ok){
     throw new Error('Network response was not ok')
