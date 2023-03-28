@@ -7,29 +7,29 @@ const[password,setPassword]=useState('')
 
   async function handleSubmit(e){
     e.preventDefault()
-    
-   setError(null)
-   const res=await fetch('api/user/signup',{
+    try{
+   setError(null) //might be moved close to  setEmail('') or deleted
+   const res=await fetch('/api/user/signup',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({email,password})
    })
+if(!res.ok){
+    throw new Error('Network response was not ok')
+}
+
 const json=await res.json()
 
-if(!res.ok){
-    
-    setError(error)
-    return
-}
- else {
-  //save user to local storage
-  setUser(json)
-  localStorage.setItem('user',JSON.stringify(json)) 
- // setUser(data)
-    
-}
-    
+ setUser(json)
+  localStorage.setItem('user',JSON.stringify(json))
+    }
 
+catch(error){
+    
+    setError(error.message)
+    
+}
+ //might move this section into the try block and include setError(null) with them
    setEmail('')
 setPassword('')
 
