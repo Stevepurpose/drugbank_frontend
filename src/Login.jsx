@@ -15,7 +15,7 @@ const[password,setPassword]=useState('')
     const res=await fetch('/api/user/login',{
      method:'POST',
      headers:{'Content-Type':'application/json'},
-     body:JSON.stringify({email,password})
+     body:JSON.stringify({email:email,password:password})
     })
     
 
