@@ -33,7 +33,7 @@ function handlePassword(e){
     
 
     localStorage.setItem('user',JSON.stringify(res.data)) 
-    console.log(res.data)
+    
  setUser(res.data)
    
  setEmail('')
@@ -45,7 +45,7 @@ setError(null)
  catch(error){
     setUser(null)
      setError(error)
-     console.log(error)
+
      
  }
  
