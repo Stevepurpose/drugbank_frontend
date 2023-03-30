@@ -24,6 +24,7 @@ function handlePassword(e){
     try{
    const res=await axios.request('/api/user/signup',{
     method:'POST',
+    headers:{'Content-Type':'application/json'},
     data:{email:email,password:password}
    })
 
