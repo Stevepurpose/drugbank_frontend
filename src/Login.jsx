@@ -31,10 +31,12 @@ function handlePassword(e){
      data:{email:email,password:password}
     })
     
-console.log(res.data)
- setUser(res.data)
+
     localStorage.setItem('user',JSON.stringify(res.data)) 
-    setEmail('')
+    console.log(res.data)
+ setUser(res.data)
+   
+ setEmail('')
 setPassword('')
 setError(null) 
     }

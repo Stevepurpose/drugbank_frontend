@@ -29,9 +29,9 @@ function handlePassword(e){
    })
 
 
- setUser(res.data)
+ 
   localStorage.setItem('user',JSON.stringify(res.data))
-
+  setUser(res.data)
   setEmail('')
   setPassword('')
   setError(null) 
