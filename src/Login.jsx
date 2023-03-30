@@ -45,6 +45,7 @@ setError(null)
  catch(error){
     setUser(null)
      setError(error)
+     console.log(error)
      
  }
  
