@@ -32,9 +32,9 @@ function handlePassword(e){
     })
     
 
-    localStorage.setItem('user',JSON.stringify(res.data)) 
+    localStorage.setItem('user',JSON.stringify(res.config.data)) 
     
- setUser(res.data)
+ setUser(res.config.data)
    
  setEmail('')
 setPassword('')
