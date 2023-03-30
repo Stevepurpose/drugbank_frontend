@@ -1,47 +1,10 @@
 import { useState } from "react";
-
+import axios from 'axios'
 
 
 function Login({user,setUser,error,setError}){
 const[email,setEmail]=useState('')
 const[password,setPassword]=useState('')
-
-
-    async function handleSubmit(e){
-    e.preventDefault()
-    
-    try{
-    
-    const res=await fetch('/api/user/login',{
-     method:'POST',
-     headers:{'Content-Type':'application/json'},
-     body:JSON.stringify({email:email,password:password})
-    })
-    
-
-    if(!res.ok){
-        throw new Error('Network response was not ok')
-    }
-
-
- const json=await res.json()
- setUser(json)
-    localStorage.setItem('user',JSON.stringify(json)) 
-    setEmail('')
-setPassword('')
-setError(null) 
-    }
-
-
- catch(error){
-    setUser(null)
-     setError(error.message)
-     console.log(error.message)
- }
- 
-
-}
-
 
 function handleEmail(e){
 
@@ -52,6 +15,40 @@ function handlePassword(e){
 
     setPassword(e.target.value)
 }
+
+
+
+
+
+    async function handleSubmit(e){
+    e.preventDefault()
+    
+    try{
+    
+    const res=await axios.request('/api/user/login',{
+     method:'POST',
+     data:{email:email,password:password}
+    })
+    
+
+ setUser(res.data)
+    localStorage.setItem('user',JSON.stringify(res.data)) 
+    setEmail('')
+setPassword('')
+setError(null) 
+    }
+
+
+ catch(error){
+    setUser(null)
+     setError(error)
+     
+ }
+ 
+
+}
+
+
 
 return(
 <div className="form-div">
