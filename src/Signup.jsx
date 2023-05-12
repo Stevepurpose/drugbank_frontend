@@ -1,5 +1,6 @@
 import { useState } from "react";
-import axios from 'axios'
+//import axios from 'axios'
+import BACKENDURL from "./Back";
 
 function Signup({user,setUser,error,setError}){
 const[email,setEmail]=useState('')
@@ -22,14 +23,14 @@ function handlePassword(e){
   async function handleSubmit(e){
     e.preventDefault()
     try{
-   const res=await axios.request('/api/user/signup',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    data:{email:email,password:password}
-   })
 
+       let headers={
+            'Content-Type':'application/json',
+            'Authorization':`Bearer ${user.token}`
+        }
 
- 
+        let  body={email:email,password:password}
+        const res=await BACKENDURL.post("/api/user/signup",body,{headers})
   localStorage.setItem('user',JSON.stringify(res.data))
   setUser(res.data)
   setEmail('')

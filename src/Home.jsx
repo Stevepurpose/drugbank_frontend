@@ -2,22 +2,23 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Drugs from './Drugs'
 import {Link}from "react-router-dom"
-
-
+//import axios from 'axios'
+import BACKENDURL from './Back'
 
 
 const Home = ({user,setUser}) => {
-const[drugs,setDrugs]=useState(null)
+const[drugs,setDrugs]=useState([])
 let now=new Date().toISOString()
 let today=new Date().toString()
  
 
 useEffect(()=>{
 const getDrugs=async()=>{
-    const res= await fetch('/api/drugs',{headers:{'Authorization':`Bearer ${user.token}`}})  //since we have our proxy in json no need adding local host here
-    const data=await res.json()
-    setDrugs(data)
-    
+   const res= await BACKENDURL.get("/api/drugs",{headers:{
+    'Authorization':`Bearer ${user.token}`
+   }
+})  
+ setDrugs(res.data)   
 }
 
 
@@ -28,10 +29,8 @@ getDrugs()
 
 
   return (
-    
-    <div className="homepage">
+     <div className="homepage">
       <h1>AS AT {today.toString()}</h1>
-
       <div className='on-line'>
       <h1 id="home-head">Chemist Stock Taker</h1>
      <Link className='stocker' to="/DrugForm" id="adder"><button className='we-inside'>ADD/UPDATE STOCK</button></Link>  
@@ -44,7 +43,7 @@ getDrugs()
        ))     
         }
     </div>
-   {/*<Logout setUser={setUser} user={user}/>*/}  
+   
     </div>
   )
 }

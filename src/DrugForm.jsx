@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import Navbar2 from './Navbar2'
+//import axios from 'axios'
+import BACKENDURL from './Back'
 
 
 const DrugForm = ({user,setError,error}) => {
@@ -12,29 +14,31 @@ let[expiryDate,setExpiryDate]=useState('')
 //async cos we reaching out to API
 async function handleSubmit(e){
   e.preventDefault()
-if(!user){
-  setError('you must be logged in')
-  
-  return
-}
 
+
+try{
+
+ let headers={
+    'Content-Type':'application/json',
+    'Authorization':`Bearer ${user.token}`
+}
 
   let drug={drugName,brand,numOfPacks,expiryDate} //req body sending to API
   
-  let res=await fetch('/api/drugs',{
-    method:'POST',
-    body:JSON.stringify(drug),
-    headers:{
-      'Content-Type':'application/json',
-      'Authorization':`Bearer ${user.token}`
-    }
-  })
+  let res=await BACKENDURL.post("/api/drugs",drug,{headers})
 
-  let data=await res.json()
-  setDrugName('')         //2 way data binding
+  
+  setDrugName('')         
   setBrand('')
   setNumOfPacks('')
   setExpiryDate('')
+}
+catch(error){
+  setError(error)
+}
+
+
+
 }
 
 

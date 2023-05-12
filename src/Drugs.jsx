@@ -1,6 +1,8 @@
 import React from 'react'
 import  {Trash}  from "phosphor-react"
 import moment from 'moment'
+//import axios from 'axios'
+import BACKENDURL from './Back'
 
 const Drugs = ({drug,now,drugs,setDrugs,user}) => {
   
@@ -11,23 +13,29 @@ const duration=moment.duration(moment(endDate).diff(moment(startDate)))
 const days=Math.floor(duration.asDays())
 
 
+
+
+
   async function handleDelete(){
 if(!user){
   return
 }
 
 
-  let options={
-    method:'DELETE',
-  headers:{'Authorization':`Bearer ${user.token}`}
+try{
+  
+let res=await BACKENDURL.delete(`/api/drugs/${drug._id}`,{headers:{
+  'Authorization':`Bearer ${user.token}`
 }
-let res=await fetch('/api/drugs/'+ drug._id ,options)
-const data=await res.json()
-let stock=drugs.filter(drug=>drug._id!==data._id)
+ })
+let xDrug=res.data
+let stock=drugs.filter(drug=>drug._id!==xDrug._id) //added res to data
 setDrugs(stock)
 console.log(stock)
+}catch(error){
+  console.log(error)
 }
-
+  }
  
     return (
     <div className='drug-specs'>
