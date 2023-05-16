@@ -64,7 +64,7 @@ return(
 
     </form>
     {error&&<p className="warning">incorrect details </p>}
-    <p>password must contain mix of uppercase,lowercase and special characters</p>
+    <p className="pass-guide">password must contain mix of uppercase,lowercase and special characters</p>
 </div>
 )
 
