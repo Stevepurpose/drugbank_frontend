@@ -15,7 +15,10 @@ const handleClick=()=>{
 
   return (
     <header>
-       
+        <h1 className="home-headnext">Chemist Stock Taker</h1>
+        <h2>TO TEST:</h2>
+        <h3>LOGIN EMAIL:monalisuarev@gmail.com</h3>
+        <h4>LOGIN PASSWORD:ABCabc123!</h4>
        <div className='for-Links'>
         <FirstAid color='green' size={64} id="logo"/>
        <nav>

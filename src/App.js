@@ -29,6 +29,7 @@ useEffect(()=>{
       
       <Navbar user={user} setUser={setUser}/>
 <Routes>
+
 <Route path="/"  element={user?<Home user={user} setUser={setUser}  drugs={drugs}  setDrugs={setDrugs}  error={error}   setError={setError}/>:<Navigate to='/login'/>}/>
 
 <Route path="/DrugForm"  element={user?<DrugForm setError={setError} user={user}   drugs={drugs}  setDrugs={setDrugs} error={error} />:<Navigate to='/login'/>}/>

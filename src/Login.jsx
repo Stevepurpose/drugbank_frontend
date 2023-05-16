@@ -52,8 +52,9 @@ setError(null)
 
 
 return(
+<div className="form-guide">
+<p className="pass-guide">password must contain a mix of uppercase,lowercase and special characters</p>
 <div className="form-div">
-
     <form  onSubmit={handleSubmit}>
 <input type="email" onChange={handleEmail} value={email}  placeholder="Email"  className="form-input"/>
 <input type="password" onChange={handlePassword} value={password} placeholder="password"   className="form-input"/>
@@ -61,9 +62,9 @@ return(
 <button className="keys">Login</button>
 </div>
     </form>
-
+</div>
     {error&&<p className="warning">incorrect details</p>}
-    <p>password must contain mix of uppercase,lowercase and special characters</p>
+    
 </div>
 )
 

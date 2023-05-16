@@ -2,8 +2,8 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Drugs from './Drugs'
 import {Link}from "react-router-dom"
-//import axios from 'axios'
 import BACKENDURL from './Back'
+
 
 
 
@@ -63,6 +63,7 @@ return groups
      <Link className='stocker' to="/DrugForm" id="adder"><button className='we-inside'>ADD STOCK</button></Link>  
 
       </div>
+      
       {
      letters.map(letter=>(
     <div  id={`drug-group-${letter}`}  key={letter} className='drug-list'>

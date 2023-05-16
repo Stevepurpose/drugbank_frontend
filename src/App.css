@@ -93,11 +93,13 @@ input{
 
 
 .form-div{
-  margin-top:50px;
+  margin-top: 20px;
+  margin-left: 350px;
   border: 2px solid blue;
   width: 50%;
-  margin-left: 350px;
+margin-bottom: 20px;
   background-color:blue;
+  
 }
 
 
@@ -108,10 +110,18 @@ input{
 }
 
 .warning{
-  color:white;
+  color:red;
   font-size: large;
-  background-color: red;
+  margin-top: 40px;
 }
+
+
+.pass-guide{
+  color:blue;
+  margin-top:10px;
+}
+
+
 
 
 
@@ -126,18 +136,22 @@ input{
     }
 
 
- 
+    .pass-guide{
+      color:blue;
+      margin-top: 10px;
+    }
     
 
 .stocker{
   margin-left: 30px;
 }
-
 .form-div{
-  margin: auto;
-  width: 80%;
-  position: relative;
-  top: 30px;
+margin-top: 20px;
+margin-left: 350px;
+border: 2px solid blue;
+width: 50%;
+margin-bottom: 20px;
+background-color:blue;
 }
 
 .form-input{
