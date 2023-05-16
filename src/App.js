@@ -1,7 +1,6 @@
 import {BrowserRouter as Router,Routes,Route,Navigate} from "react-router-dom"
 import{useEffect, useState} from 'react'
 import './App.css';
-import Signup from './Signup';
 import Home from './Home';
 import DrugForm from './DrugForm'
 import Login from "./Login";
@@ -35,7 +34,7 @@ useEffect(()=>{
 
 <Route path="/Login"  element={!user?<Login  user={user} setUser={setUser}   error={error}   setError={setError}/>:<Navigate to='/'/>}/>
     
-<Route path="/Signup"  element={!user?<Signup user={user} setUser={setUser}   error={error}   setError={setError}/>:<Navigate to='/'/>}/>      
+
 
 </Routes>
 </Router>

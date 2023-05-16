@@ -2,7 +2,6 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Drugs from './Drugs'
 import {Link}from "react-router-dom"
-//import axios from 'axios'
 import BACKENDURL from './Back'
 
 

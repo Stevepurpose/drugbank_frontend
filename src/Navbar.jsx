@@ -29,7 +29,6 @@ const handleClick=()=>{
 
        {!user && (<div className='for-stocker'>
         <Link className='stocker' to ="/Login"><button className='keys'> Login</button></Link>
-        <Link className='stocker' to ="/Signup"><button className='keys'>Signup</button></Link>
         </div>)}
 
 
