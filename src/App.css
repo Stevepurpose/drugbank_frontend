@@ -1,33 +1,69 @@
+
 .App {
   text-align: center;
   color: blue;
 }
 
 
-
-
 #logo{
-  margin-top: 20px;
+  margin-top:1.25rem;
+}
+
+.form-guide{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.form-zone{
+  display: flex;
+  flex-direction: column;
+   
+}
+
+.keys:visited{
+  background-color:lawngreen;
+}
+.keys:active{
+   background-color:lawngreen;
+}
+
+
+.pass-guide{
+  color:blue;
+  margin-top:0.6rem;
 }
 
 input{
-  height: 50px;
+  border: 1px solid blue;
+  margin-bottom:0.9rem;
+  width: 50%;
+  margin-left:auto;
+  margin-right: auto;
+  height: 3rem;
+  
 }
 
 .we-inside{
   color: white;
   background-color: blue;
+  height: 100%;
+  padding: 1rem;
 }
 
 .keys{
   color: white;
   background-color: green;
   font-size: larger;
+  width: 20%;
+  margin: auto;
+  padding: 0.8rem;
 }
 
 .for-Links{
   border: 2px solid blue;
-  box-shadow: 5px 5px 5px gainsboro
+  box-shadow: 0.3rem 0.3rem 0.3rem gainsboro
 }
 
 .for-stocker{
@@ -35,15 +71,23 @@ input{
   margin-left: auto;
   display: flex;
   width: 20%;
-  padding: 2em; 
+  padding: 2rem; 
 }
 
 #adder{
   margin-left: auto;
   display: flex;
   width: 20%;
-  padding: 2em; 
+  padding: 2em;
+   
 }
+
+.form-div{
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
 
 .on-line{
   display:flex;
@@ -51,10 +95,16 @@ input{
 
 .stocker{
   color: green;
-  text-decoration: none;
-   
+  text-decoration: none;  
+  margin-top: 0.5rem;
 }
 
+.logout{
+  color: green; 
+  padding: 1em; 
+  margin: auto; 
+  text-align: center;
+}
 
 .home-head{
   color: blue;
@@ -63,10 +113,11 @@ input{
 
 .drug-specs{
   
-  margin-bottom: 20px;
-  padding: 90px;
+  margin-bottom: 1.25rem;
+  padding:5.5rem;
   border: 3px solid gainsboro;
   box-shadow: 5px 5px 5px gainsboro;
+  font-family: sans-serif;
 }
 
 form{
@@ -74,17 +125,11 @@ form{
   
 }
 
-input{
-  border: 1px solid blue;
-  margin-bottom: 15px;
-  width: 50%;
-  margin-left: 300px;
-  
-}
 
 #tosubmit{
   width: 50%;
-  margin-left: 190px;
+  margin-left:auto;
+  margin-right:auto;
   color: white;
   background-color: green;
   font-size: larger;
@@ -92,21 +137,16 @@ input{
 }
 
 
-.form-div{
-  margin-top: 20px;
-  margin-left: 350px;
-  border: 2px solid blue;
-  width: 50%;
-margin-bottom: 20px;
-  background-color:blue;
-  
+.form-input{
+
+  margin-bottom:0.5rem;
+  font-size: larger;
 }
 
 
-.form-input{
-  margin-left:190px;
-  margin-top: 20px;
-  font-size: larger;
+#login_input, #login_pass{
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .warning{
@@ -116,14 +156,249 @@ margin-bottom: 20px;
 }
 
 
-.pass-guide{
-  color:blue;
-  margin-top:10px;
+.user_mail{
+  float: right;
 }
 
 
 
 
+@media (max-width:1116px) {
+ 
+  .homepage{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+  }
+  .on-line{
+      display: flex;
+      flex-direction: column;
+      margin: auto;    
+  }
+
+  .home-head{
+    margin: auto;
+  }
+
+ .stocker{
+   margin-left: auto; 
+   margin-right: auto; 
+    margin-top: 0.5rem;
+  }
+ 
+
+
+ .we-inside{
+  color: white;
+  background-color: blue;
+  height: 60%;
+  padding: 1rem;
+}
+
+
+ .for-stocker{
+   display: flex;
+   flex-direction:column;
+   gap:0.25rem;
+   justify-content: space-between;
+   border: 1px solid black;
+   background-color: blue;
+   color: white;
+ }
+
+ .drug-specs{
+  font-family: sans-serif;
+ }
+
+}
+
+
+@media (max-width:865px) {
+  .for-stocker{
+    display: flex;
+    flex-direction:column;
+    gap:0.25rem;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+   
+  }
+
+  .user_mail{
+    position:relative;
+    right: 1.2rem;
+  }
+
+  .drug-specs{
+    font-family: sans-serif;
+   }
+
+
+
+}
+
+
+@media (max-width:768px) {
+
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+
+}
+
+
+@media (max-width:699px) {
+.user_mail{
+  font-size: smaller;
+  position: relative;
+  left: -0.3rem;  
+}
+
+
+.stocker{
+  margin-left: auto; 
+  margin-right: auto; 
+   margin-top: 0.5rem;
+ }
+
+}
+
+@media (max-width:665px) {
+  .user_mail{
+    font-size: smaller;
+    position: relative;
+    left: -0.6rem;  
+  }
+  
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+}
+
+
+@media (max-width:613px) {
+  .user_mail{
+    font-size: smaller;
+    position: relative;
+    left: -0.9rem;  
+  }
+  
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+
+}
+
+
+
+@media (max-width:600px) {
+  .user_mail{
+    font-size: smaller;
+    position: relative;
+    left: -1.2rem; 
+  }
+  
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+
+}
+
+
+
+@media(max-width:587px) {
+  .keys{
+    width: 25%;
+    padding: 0.5rem;
+  }
+
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+}
+
+
+
+
+@media (max-width:580px) {
+  .for-stocker{
+    display: flex;
+    flex-direction:column;
+    gap:0.25rem;
+    justify-content: space-between;
+    background-color: blue;
+    color: white;
+    
+  }
+
+  .user_mail{
+    float: none;
+    text-align: left;
+    width: 100%; 
+  }
+
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+}
+
+
+
+@media (max-width:560px) {
+  .for-stocker{
+    display: flex;
+    flex-direction:column;
+    gap:0.25rem;
+    justify-content: space-between;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    width: fit-content;
+   
+  }
+
+  .stocker{
+    margin-left: auto; 
+    margin-right: auto; 
+     margin-top: 0.5rem;
+   }
+  
+
+  .user_mail{
+   position: relative;
+   left: 0.5rem;
+    
+  }
+}
+
+
+@media(max-width:465px) {
+  .keys{
+    font-size: smaller;
+    padding: 0.2rem;
+    width:25%;
+  }
+}
 
   @media (max-width:416px) {
 
@@ -131,61 +406,56 @@ margin-bottom: 20px;
       justify-content: space-around;
       margin: auto;
       display: flex;
-      width: 20%;
+      flex-direction: column;
+      width: 40%;
       padding: 2em; 
     }
 
 
     .pass-guide{
       color:blue;
-      margin-top: 10px;
+      margin-top:0.56rem;
     }
     
-
-.stocker{
-  margin-left: 30px;
-}
-.form-div{
-margin-top: 20px;
-margin-left: 350px;
-border: 2px solid blue;
-width: 50%;
-margin-bottom: 20px;
-background-color:blue;
-}
 
 .form-input{
   margin: auto;
   position: relative;
-  top: 3px;
+  top: 0.2rem;
   width: 80%;
 }
 
 .keys{
-  margin-top: 5px;
+  margin-top:0.50rem;
   font-size: medium;
 }
 
 
 #inner-form{
-  height: 300px;
-  margin-bottom: 50px;
+  height:19rem;
+  margin-bottom: 3rem;
   
 }
 
 #tosubmit{
   margin: auto;
   position: relative;
-  top: 5px;
+  top: 0.3rem;
 }
+
+.stocker{
+  margin-left: auto; 
+  margin-right: auto; 
+   margin-top: 0.5rem;
+ }
 
 
 
 input{
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom:1.25rem;
+  margin-top:0.6rem;
 }
 
 .home-head{
@@ -200,60 +470,39 @@ input{
   margin: auto;
 }
 
+.user_mail{
+ position: relative;
+ left: -0.1rem;
+}
+
   }
 
 
-  @media (max-width:768px) {
+  @media (max-width:368px) {
 
-    .home-head{
-      margin: auto;
-    }
-
-    
-
-
-    .on-line{
-      display: grid;
-    }
-    #adder{
-      margin: auto;
-    }
-
-    .stocker{
-      margin-left: 20px;
-    }
-
-
-    .form-div{
-      margin: auto;
-      width: 80%;
+    .user_mail{
       position: relative;
-      top: 30px;
-      height: 180px;
-    }
-    
-    .form-input{
-      margin: auto;
+      left: -0.7rem;
+     }
+
+  }
+
+
+  @media (max-width:346px) {
+
+    .user_mail{
       position: relative;
-      top: 15px;
-      width: 80%;
-    }
-    
-    .keys{
-      margin-top: 35px;
-      font-size: medium;
-    }
-    #inner-form{
-      height: 300px;
-      margin-bottom: 50px;
-      
-    }
-    
-    #tosubmit{
-      margin: auto;
+      left: -1.0rem;
+     }
+
+  }
+
+
+  @media (max-width:320px) {
+
+    .user_mail{
       position: relative;
-      top: 5px;
-    }
-    
+      left: -1.3rem;
+     }
 
   }

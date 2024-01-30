@@ -49,16 +49,16 @@ catch(error){
 <h1>Add or update Drug</h1>
     <form  className='form-div' onSubmit={handleSubmit}  id='inner-form'>
 <input type="text" onChange={(e)=>setDrugName(e.target.value)} 
-value={drugName} placeholder='DRUG NAME' className='form-input' />
+value={drugName} placeholder='DRUG NAME' className='form-input2' />
 
 <input type="text" onChange={(e)=>setBrand(e.target.value)} 
-value={brand} placeholder='BRAND'className='form-input' />
+value={brand} placeholder='BRAND'className='form-input2' />
 
 <input type="number" onChange={(e)=>setNumOfPacks(e.target.value)} 
-value={numOfPacks} placeholder='NUM OF PACKS' className='form-input'/>
+value={numOfPacks} placeholder='NUM OF PACKS' className='form-input2'/>
 
 <input type="date" onChange={(e)=>setExpiryDate(e.target.value)} 
-value={expiryDate} placeholder='EXPIRY DATE'className='form-input' />
+value={expiryDate} placeholder='EXPIRY DATE'className='form-input2' />
 <button id="tosubmit">ADD</button>
 
     </form>

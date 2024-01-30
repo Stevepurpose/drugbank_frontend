@@ -22,7 +22,7 @@ function handlePassword(e){
     try{
         
      let  body={email:email,password:password}
-    const res=await BACKENDURL.post("/api/user/login",body,{headers:{
+    const res=await BACKENDURL.post("/api/users/login",body,{headers:{
         'Content-Type':'application/json',
         'Authorization':`Bearer ${user.token}`
     }}
@@ -34,8 +34,8 @@ function handlePassword(e){
  setUser(res.data)
    
  setEmail('')
-setPassword('')
-setError(null) 
+ setPassword('')
+ setError(null) 
     }
 
 
@@ -53,16 +53,13 @@ setError(null)
 
 return(
 <div className="form-guide">
-<p className="pass-guide">password must contain a mix of uppercase,lowercase and special characters</p>
-<div className="form-div">
+<p className="pass-guide">Passwords must contain a mix of uppercase, lowercase and special characters.</p>
     <form  onSubmit={handleSubmit}>
-<input type="email" onChange={handleEmail} value={email}  placeholder="Email"  className="form-input"/>
-<input type="password" onChange={handlePassword} value={password} placeholder="password"   className="form-input"/>
-<div>
+<input type="email" onChange={handleEmail} value={email}  placeholder="Email"  className="form-input" id="login_input"/>
+<input type="password" onChange={handlePassword} value={password} placeholder="password"   className="form-input" id="login_pass"/>
 <button className="keys">Login</button>
-</div>
     </form>
-</div>
+
     {error&&<p className="warning">incorrect details</p>}
     
 </div>
