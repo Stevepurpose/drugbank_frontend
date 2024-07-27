@@ -1,9 +1,12 @@
 import { useState } from "react";
 import BACKENDURL from './Back'
+import LoadingIndicator from "./components/LoadingIndicator";
 
 function Login({user,setUser,error,setError}){
 const[email,setEmail]=useState('')
 const[password,setPassword]=useState('')
+const [loading, setLoading] = useState(false);
+
 
 function handleEmail(e){
 
@@ -17,7 +20,8 @@ function handlePassword(e){
 
 
     async function handleSubmit(e){
-    e.preventDefault()
+        setLoading(true);   
+        e.preventDefault()
     
     try{
         
@@ -31,21 +35,20 @@ function handlePassword(e){
 
     localStorage.setItem('user',JSON.stringify(res.data)) 
     
- setUser(res.data)
+    setUser(res.data)
    
- setEmail('')
- setPassword('')
- setError(null) 
-    }
-
-
+    setEmail('')
+    setPassword('')
+    setError(null) 
+ }
  catch(error){
     setUser(null)
-     setError(error)
-
-     
+     setError(error)   
  }
  
+ finally {
+    setLoading(false)
+}
 
 }
 
@@ -57,6 +60,7 @@ return(
     <form  onSubmit={handleSubmit}>
 <input type="email" onChange={handleEmail} value={email}  placeholder="Email"  className="form-input" id="login_input"/>
 <input type="password" onChange={handlePassword} value={password} placeholder="password"   className="form-input" id="login_pass"/>
+{loading && <LoadingIndicator />}
 <button className="keys">Login</button>
     </form>
 
