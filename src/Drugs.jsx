@@ -1,6 +1,7 @@
 import React from 'react'
-import  {Trash}  from "phosphor-react"
+import  {PencilSimple, Trash}  from "phosphor-react"
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 //import axios from 'axios'
 import BACKENDURL from './Back'
 
@@ -34,6 +35,11 @@ console.log(stock)
 }
   }
  
+
+
+
+
+
     return (
     <div className='drug-specs'>
         <h4>MED:{drug.drugName}</h4>
@@ -56,6 +62,7 @@ now >drug.expiryDate ?  <p style={{color:'red'}}>EXP:{drug.expiryDate}</p>:
      }
       
       <button onClick={handleDelete}><Trash color='red' size={32}/></button>
+      <Link to={`/update-drug/${drug._id}`}><button><PencilSimple color='blue' size={32}/></button></Link>
 
     </div>
   )

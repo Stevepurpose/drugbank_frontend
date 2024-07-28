@@ -7,7 +7,7 @@ import BACKENDURL from './Back'
 
 
 
-const Home = ({user,setUser,error,setError,drugs,setDrugs}) => {
+const Home = ({user, setUser, error, setError, drugs, setDrugs, updateDrug}) => {
 
 let now=new Date().toISOString()
 let today=new Date().toString()
@@ -46,7 +46,7 @@ const sortedDrugs=[...drugs].sort((a,b)=>a.drugName.localeCompare(b.drugName))
         
      
      {sortedDrugs && sortedDrugs.map(drug=>(
-        <Drugs key={drug._id} drug={drug} now={now} drugs={drugs} setDrugs={setDrugs} user={user} error={error} setError={setError}  />
+        <Drugs key={drug._id} drug={drug} now={now} drugs={drugs} setDrugs={setDrugs} user={user} error={error} setError={setError} updateDrug={updateDrug} />
        )) }    
         
   

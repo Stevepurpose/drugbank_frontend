@@ -5,6 +5,7 @@ import Home from './Home';
 import DrugForm from './DrugForm'
 import Login from "./Login";
 import Navbar from './Navbar'
+import UpdateForm from "./UpdateForm";
 
 
 
@@ -36,7 +37,7 @@ useEffect(()=>{
 
 <Route path="/Login"  element={!user?<Login  user={user} setUser={setUser}   error={error}   setError={setError}/>:<Navigate to='/'/>}/>
     
-  
+<Route path="/update-drug/:id"  element={user?<UpdateForm user={user} error={error} drugs={drugs} setDrugs={setDrugs}/>:<Navigate to='/login'/>}/>
 
 </Routes>
 </Router>
