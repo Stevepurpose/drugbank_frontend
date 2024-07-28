@@ -60,10 +60,10 @@ now >drug.expiryDate ?  <p style={{color:'red'}}>EXP:{drug.expiryDate}</p>:
     days > 90 ? <p style={{color:'blue'}}>{days} days left</p>:
      null
      }
-      
+      <div className='button-group'>
       <button onClick={handleDelete}><Trash color='red' size={32}/></button>
       <Link to={`/update-drug/${drug._id}`}><button><PencilSimple color='blue' size={32}/></button></Link>
-
+      </div>
     </div>
   )
 }

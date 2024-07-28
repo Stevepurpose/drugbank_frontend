@@ -4,24 +4,25 @@ import Navbar2 from './Navbar2';
 import BACKENDURL from './Back';
 
 const UpdateForm = ({ user, error, drugs, setDrugs }) => {
-  const { id } = useParams();
+  let { _id } = useParams();
   const navigate = useNavigate();
-  const [drug, setDrug] = useState(null);
+  //const [drug, setDrug] = useState(null);
   const [drugName, setDrugName] = useState('');
   const [brand, setBrand] = useState('');
   const [numOfPacks, setNumOfPacks] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
 
   useEffect(() => {
-    const drugToUpdate = drugs.find(d => d._id === id);
+    if(drugs){
+    const drugToUpdate = drugs.find(drug => drug._id === _id);
     if (drugToUpdate) {
-      setDrug(drugToUpdate);
       setDrugName(drugToUpdate.drugName);
       setBrand(drugToUpdate.brand);
       setNumOfPacks(drugToUpdate.numOfPacks);
       setExpiryDate(drugToUpdate.expiryDate);
     }
-  }, [id, drugs]);
+  }
+  }, [_id, drugs]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +34,10 @@ const UpdateForm = ({ user, error, drugs, setDrugs }) => {
     const updatedDrug = { drugName, brand, numOfPacks, expiryDate };
 
     try {
-      const res = await BACKENDURL.put(`/api/drugs/${id}`, updatedDrug, { headers });
+      const res = await BACKENDURL.put(`/api/drugs/${_id}`, updatedDrug, { headers });
       if (res.status === 200) {
         alert("Drug updated!");
-        const updatedDrugs = drugs.map(d => (d._id === id ? res.data : d));
+        const updatedDrugs = drugs.map(drug => (drug._id === _id ? res.data : drug));
         setDrugs(updatedDrugs);
         navigate('/');
       } else {
@@ -44,6 +45,7 @@ const UpdateForm = ({ user, error, drugs, setDrugs }) => {
       }
     } catch (error) {
       console.log(error);
+      alert("failed to update drugs")
     }
   };
 
