@@ -4,10 +4,10 @@ import moment from 'moment'
 import { Link } from 'react-router-dom'
 //import axios from 'axios'
 import BACKENDURL from './Back'
-import { useNavigate } from 'react-router-dom'
+
 
 const Drugs = ({drug,now,drugs,setDrugs,user}) => {
-  const navigate = useNavigate();
+  
  //date formatter
  const startDate=moment(now)
 const endDate=moment(drug.expiryDate)
@@ -27,10 +27,10 @@ let res=await BACKENDURL.delete(`/api/drugs/${drug._id}`,{headers:{
   'Authorization':`Bearer ${user.token}`
 }
  })
-let xDrug=res.data
-let stock=drugs.filter(drug=>drug._id!==xDrug._id) //added res to data
+
+let stock=drugs.filter(item=>item._id!==drug._id) //added res to data
 setDrugs(stock)
-navigate('/');
+
 }catch(error){
   console.log(error)
 }
